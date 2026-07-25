@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Chatbot</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="maingrid">
+            <div class="sidebar">
+                <a href="homepage.html" class="sidebarlink">
+                    <div class="sidebarelement">Home</div>
+                </a>
+                <a href="index.html" class="sidebarlink active">
+                    <div class="sidebarelement">Chatbot</div>
+                </a>
+                <a href="https://www.google.com" class="sidebarlink">
+                    <div class="sidebarelement">AAA</div>
+                </a>
+                <a href="https://www.google.com" class="sidebarlink">
+                    <div class="sidebarelement">AAA</div>
+                </a>
+            </div>
+            <div id="main">
+                <div id="image-preview" class="image-preview">No image selected</div>
+                <div id="prediction-result" class="prediction-result">Waiting for an image...</div>
+                <div class="centerbutton">
+                    <form id="chat-form" class="textboxarea" method="post" action="/predict" enctype="multipart/form-data">
+                        <label for="image-upload" class="upload-button" title="Upload an image">📷</label>
+                        <input id="image-upload" name="image" type="file" accept="image/*" hidden>
+                        <span id="upload-status" class="upload-status">No image selected</span>
+                        <button type="submit" class="submitbutton">↑</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

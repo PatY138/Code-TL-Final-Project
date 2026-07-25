@@ -1,0 +1,281 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+     
+}
+body{
+    animation: fadeInOnLoad 0.7s ease-in-out forwards;
+}
+
+a{
+    text-decoration: none;
+}
+.maingrid{
+    display:grid;
+    grid-template-columns: 260px 1fr;
+    width: 100vw;
+    height: 100vh; 
+    overflow: hidden;
+}
+
+.homegrid{
+    display:grid;
+    grid-template-columns: 1fr;
+    width: 100vw;
+    height: 100vh; 
+    overflow: hidden;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/054/892/970/small_2x/green-grid-retro-futuristic-loop-background-free-video.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sidebar{
+    background-color: #28282B;
+    color: white;
+    height: 100%;
+    overflow-y: auto;
+
+}
+.sidebarlink {
+    text-decoration: none;
+    color: #f2f2f2;
+    font-size: 17px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden; 
+    margin:10px;
+}
+
+.sidebarelement{
+    text-align: center;
+    padding: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebarlink.active .sidebarelement{
+    background-color: #FFF;
+    color:black;
+}
+
+.sidebarelement:hover{
+    text-align: center;
+    background-color: grey;
+}
+
+#main{
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end; 
+    align-items: center;       
+    padding-bottom: 20px;
+}
+
+.image-preview {
+    width: min(100%, 700px);
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c9c9c9;
+    margin-bottom: 12px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.image-preview img {
+    max-width: 100%;
+    max-height: 220px;
+    border-radius: 16px;
+    object-fit: contain;
+}
+.prediction-result {
+    min-height: 24px;
+    margin-bottom: 12px;
+    color: #e6e6e6;
+    font-size: 14px;
+}
+.prediction-result.loading {
+    color: #f8d775;
+}
+.prediction-result.success {
+    color: #7fe88d;
+}
+.prediction-result.error {
+    color: #ff8f8f;
+}
+.submitbutton{
+    border-radius: 200px;
+    color:white;
+    background-color:blue;
+    border-width: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    font-size: 16pt;
+}
+.submitbutton:hover{
+    cursor:pointer;
+}
+.centerbutton {
+    width: 100%;           
+    max-width: 700px;         
+    padding: 0 20px;           
+    box-sizing: border-box;
+    margin-bottom: 20px;   
+}
+.upload-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+.upload-status {
+    flex: 1;
+    color: #dcdcdc;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.textboxarea {
+    display: flex;
+    align-items: center;
+    gap: 10px;                 
+    background-color: #2f2f2f; 
+    padding: 8px 12px;
+    border-radius: 24px;       
+}
+.submitbutton:active {
+    animation: clicked 0.2s alternate;
+}
+
+@keyframes clicked {
+    0% {
+        background-color: #2f2f2f;
+    }
+    100% {
+        background-color: #2f2f2f;
+        color:#2f2f2f
+    }
+}
+
+@keyframes fadeInOnLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flyInTop{
+    0% {
+        transform: translateY(-100%); 
+        opacity: 0;                    
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;                    
+    }
+}
+
+@keyframes letterLoad {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: limegreen;
+  }
+  100%{
+    color: #fff;
+  }
+}
+
+.hover-text span {
+  color: #fff;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  display: inline-block;
+}
+
+.hover-text:hover span {
+  opacity: 0.5;
+  color: #28282B;
+}
+
+.hover-text span:hover {
+  opacity: 1;
+  color: limegreen;
+  animation: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+}
+
+.titlepagetext{
+    font-size: 130pt;
+}
+
+.highlight1{
+    animation: letterLoad 1.6s ease-in-out 0s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0s forwards;
+}
+.highlight2{
+    animation: letterLoad 1.6s ease-in-out 0.1s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
+}
+.highlight3{
+    animation: letterLoad 1.6s ease-in-out 0.2s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards;
+}
+.highlight4{
+    animation: letterLoad 1.6s ease-in-out 0.3s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.3s forwards;
+}
+.highlight5{
+    animation: letterLoad 1.6s ease-in-out 0.4s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.4s forwards;
+}
+.highlight6{
+    animation: letterLoad 1.6s ease-in-out 0.5s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+}
+.highlight7{
+    animation: letterLoad 1.6s ease-in-out 0.6s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.6s forwards;
+}
+.highlight8{
+    animation: letterLoad 1.6s ease-in-out 0.7s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.7s forwards;
+}
+.highlight9{
+    animation: letterLoad 1.6s ease-in-out 0.8s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.8s forwards;
+}
+.highlight10{
+    animation: letterLoad 1.6s ease-in-out 0.9s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.9s forwards;
+}
+
+.quantico-regular {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quantico-bold {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quantico-regular-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.quantico-bold-italic {
+  font-family: "Quantico", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
