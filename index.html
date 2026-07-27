@@ -5,26 +5,31 @@
         <title>Chatbot</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Indie+Flower&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="maingrid">
             <div class="sidebar">
                 <a href="homepage.html" class="sidebarlink">
-                    <div class="sidebarelement">Home</div>
+                    <div class="sidebarelement elms-sans">Home</div>
                 </a>
                 <a href="index.html" class="sidebarlink active">
-                    <div class="sidebarelement">Chatbot</div>
+                    <div class="sidebarelement elms-sans">Chatbot</div>
                 </a>
                 <a href="https://www.google.com" class="sidebarlink">
-                    <div class="sidebarelement">AAA</div>
+                    <div class="sidebarelement elms-sans">AAA</div>
                 </a>
                 <a href="https://www.google.com" class="sidebarlink">
-                    <div class="sidebarelement">AAA</div>
+                    <div class="sidebarelement elms-sans">AAA</div>
                 </a>
             </div>
-            <div id="main">
-                <div id="image-preview" class="image-preview">No image selected</div>
-                <div id="prediction-result" class="prediction-result">Waiting for an image...</div>
+            <div id="main" class="elms-sans">
+                <div class="preview-stack">
+                    <div id="image-preview" class="image-preview">No image selected</div>
+                    <div id="prediction-result" class="prediction-result">Waiting for an image...</div>
+                </div>
                 <div class="centerbutton">
                     <form id="chat-form" class="textboxarea" method="post" action="/predict" enctype="multipart/form-data">
                         <label for="image-upload" class="upload-button" title="Upload an image">📷</label>

@@ -8,7 +8,7 @@ import torch.optim as optim
 import torch.optim.lr_scheduler
 from PIL import Image
 
-ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "bmp"}
+ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif", "bmp", "avif", "webp", "svg"}
 
 # Serve static files from the current project folder.
 app = Flask(__name__, static_folder='.', static_url_path='')
@@ -94,18 +94,26 @@ net.load_state_dict(weights)
 
 def inference(image_file):
   img = Image.open(image_file).convert('RGB')
-  transform = transforms.Compose([
+  test_transform = transforms.Compose([
       transforms.Resize((32, 32)),
+      transforms.RandAugment(num_ops=2, magnitude=9),
+      transforms.RandomHorizontalFlip(),
+      transforms.RandomCrop(32, padding=4),
       transforms.ToTensor(),
-      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
-     ])
-  img_tensor = transform(img)
-  img_tensor = img_tensor.unsqueeze(0).to(device)
+      transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+  ])
+  
+  probs = []
   net.eval()
   with torch.no_grad():
-    output = net(img_tensor)
-    _, predicted = torch.max(output, 1)
-    return classes[predicted[0].item()]
+    for _ in range(10):
+        img_tensor = test_transform(img).unsqueeze(0).to(device)
+        output = net(img_tensor)
+        probs.append(F.softmax(output, dim=1))
+  
+  final_output = torch.stack(probs).mean(0)
+  _, predicted = torch.max(final_output, 1)
+  return classes[predicted[0].item()]
 
 #MY CODE END
 @app.route('/')
