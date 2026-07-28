@@ -20,6 +20,7 @@ a{
     width: 100vw;
     height: 100vh; 
     overflow: auto;
+    animation: flyInTop 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .homegrid{
@@ -349,7 +350,26 @@ a{
     border-color:#3f89c0;
     border-radius: 10px;
     padding:5px;
+    margin-top: 20px;
+    transform: translate(0, 0);
+    transition: transform 0.5s ease-out;
+}
+
+.container2:hover{
+    display: grid;
+    grid-template-columns: 150px 840px; 
+    grid-template-rows: 150px;
+    grid-gap: 0px;
+    justify-content: space-evenly;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#3f89c0;
+    border-radius: 10px;
+    padding:5px;
     margin-top: 10px;
+    color:black;
+    background-color: skyblue;
+    transform: translate(-50px, 0px);
 }
 
 .header2item{
@@ -361,6 +381,7 @@ a{
     font-size:25pt;
     font-weight: 600;
 }
+
 
 .logoimg{
     width:150px;
@@ -402,7 +423,7 @@ th:hover {
     grid-gap: 10px;
     justify-content: space-evenly;
     padding:5px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .header3item{
@@ -417,5 +438,30 @@ th:hover {
     border-radius: 10px;
     font-size:25pt;
     font-weight: 600;
+    transform: translate(0, 0);
+    transition: transform 0.5s ease-out; 
+}
+.header3item:hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color:#3f89c0;
+    border-radius: 10px;
+    color:black;
+    background-color: skyblue;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    font-size:25pt;
+    font-weight: 600;
+    transform: translate(-50px, 0px); 
 }
 
+.container4{
+    display: grid;
+    grid-template-columns: 1000px; 
+    grid-template-rows: 100px 100px;
+    grid-gap: 10px;
+    justify-content: space-evenly;
+    padding:5px;
+    margin-top: 20px;
+}

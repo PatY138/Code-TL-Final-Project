@@ -19,7 +19,7 @@ def allowed_file(filename):
 
 #MY CODE:
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-classes = ('plane', 'car', 'bird', 'cat','deer', 'dog', 'frog', 'horse', 'ship', 'truck')
+classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck')
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
