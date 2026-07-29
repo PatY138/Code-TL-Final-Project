@@ -245,6 +245,7 @@ a{
 
 .highlight1{
     animation: letterLoad 1.6s ease-in-out 0s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0s forwards;
+    transform: translate(-50px, 0px)
 }
 .highlight2{
     animation: letterLoad 1.6s ease-in-out 0.1s both, flyInTop 2s cubic-bezier(0.25, 1, 0.5, 1) 0.1s forwards;
@@ -464,4 +465,69 @@ th:hover {
     justify-content: space-evenly;
     padding:5px;
     margin-top: 20px;
+}
+
+.container5{
+    display: grid;
+    grid-template-columns: 1000px; 
+    grid-template-rows: 100px;
+    grid-gap: 10px;
+    justify-content: space-evenly;
+    padding:5px;
+    margin-top: 20px;
+}
+
+.bottomlayer {
+  z-index: 1;
+}
+
+.toplayer {
+  z-index: 3;
+}
+
+.container6{
+    display: grid;
+    position:fixed;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px; 
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px ;
+    grid-gap: 10px;
+    justify-content: space-evenly; 
+    padding:5px;
+    left:260px;
+    top:10px;
+}
+
+.bgItem{
+    border-radius: 10px;
+    color:transparent;
+    background-color: #212121;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    font-size:25pt;
+    font-weight: 600;
+    transition: background-color 1.5s ease-out;
+}
+
+.bgItem:hover{
+    border-radius: 10px;
+    color:transparent;
+    background-color: white;
+    text-align: left;
+    padding: 10px;
+    border-radius: 10px;
+    font-size:25pt;
+    font-weight: 600;
+    transition: background-color 0s; 
+}
+.container7{
+    display: grid;
+    position:fixed;
+    grid-template-columns: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px; 
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-gap: 10px;
+    justify-content: space-evenly; 
+    padding:5px;
+    left:260px;
+    top:10px;
 }
