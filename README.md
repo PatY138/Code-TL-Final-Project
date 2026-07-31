@@ -1,0 +1,1 @@
+To properly run and display this website, ensure that all packages and dependencies are installed. This includes PIL, jsonify, pytorch, python, flask, request. To run, type python3 app.py to launch the webpage and open in browser to see the webpage. If the Image Classifier does not work, the website was not launched correctly.
